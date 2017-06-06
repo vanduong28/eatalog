@@ -25,9 +25,20 @@ const deleteRestaurantFailure = () => {
   // console.log('delete city failure.')
 }
 
+const hideViewRestaurantsBtn = function () {
+  // Hide View restaurants modal button initially until user signs in.
+  $('#view-restaurant-btn').hide()
+}
+
+const showViewRestaurantsBtn = function () {
+  $('#view-restaurant-btn').show()
+}
+
 module.exports = {
   getRestaurantsSuccess,
   getRestaurantsFailure,
   deleteRestaurantSuccess,
-  deleteRestaurantFailure
+  deleteRestaurantFailure,
+  hideViewRestaurantsBtn,
+  showViewRestaurantsBtn
 }

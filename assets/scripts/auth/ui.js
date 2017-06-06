@@ -8,6 +8,7 @@ const signUpSuccess = () => {
   $('.sign-up-btn').hide()
   $('.sign-in-prompt').text('Sign in to start planning!')
   $('.game-message').text(' ')
+  $('#signIn-modal').modal('toggle')
 }
 
 const signUpFailure = () => {
@@ -33,6 +34,7 @@ const signInSuccess = (data) => {
   $('#sign-out-modal').show()
   $('#sign-up-modal').hide()
   $('#sign-in-modal').hide()
+  $('#view-restaurant-btn').show()
 }
 
 const signInFailure = () => {
@@ -64,6 +66,8 @@ const signOutSuccess = () => {
   $('#sign-in-modal').show()
   $('#chng-pw-modal').hide()
   $('#sign-out-modal').hide()
+
+  $('#view-restaurant-btn').hide()
 }
 
 const signOutFailure = () => {
