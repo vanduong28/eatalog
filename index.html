@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Eatalog</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -12,14 +12,119 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <h1>Munch munch</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <div class="button-functions">
+  <button type="button" class="sign-up-btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp-modal">
+            Sign Up
+            </button>
+  <button type="button" class="sign-in-btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn-modal">
+            Sign In
+          </button>
+  <div class="hide-on-start">
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut-modal">
+            Sign Out
+            </button>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changePassword-modal">
+            Change Password
+          </button>
+  </div>
+</div><br/>
+
+<div class="btn-container">
+    <button type="button" class="new-city-button btn-primary btn-lg" data-toggle="modal" data-target="#addCity-modal">
+      Add Restaurant</button>
+    <button type="button" class="view-restaurants-button btn-primary btn-lg">View Restaurants</button>
+</div><br/>
+
+<!-- list of restaurants populated using handlebars-->
+<div class="container block collection">
+  <div id="content" class="content"></div>
+</div>
+
+
+<!-- Sign Up Modal -->
+  <div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="sign-up-modal-label">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-up">
+            <div class="form-group">
+              <input type="text" name="credentials[email]" id="sign-up-email" placeholder="Email">
+              <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
+              <input type="submit" name="submit" value="Sign up!">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signin Modal -->
+  <div class="modal fade" id="signIn-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="sign-in-modal-label">Sign In</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <div class="form-group">
+              <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Email">
+              <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+              <input type="submit" name="submit" value="Sign in">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signout Modal -->
+  <div class="modal fade" id="signOut-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Are you sure you want to sign out?</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-out">
+            <div class="form-group">
+              <input type="submit" name="submit" value="Sign out">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+  <div class="modal fade" id="changePassword-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="changePasswordLabel">Change Password</h4>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <div class="form-group">
+              <input type="password" name="passwords[old]" id="old-password" placeholder="Old Password">
+              <input type="password" name="passwords[new]" id="new-password" placeholder="New Password">
+              <input type="submit" name="submit" value="Change Password">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
     </body>
 </html>

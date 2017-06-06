@@ -1,0 +1,35 @@
+<table>
+
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Cuisine</th>
+      <th>Neighborhood</th>
+      <th>Date Dined</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+
+    <tbody>
+      {{#each restaurants as |restaurant|}}
+      <tr>
+        <td co>{{restaurant.name}}</td>
+        <td>{{restaurant.city}}</td>
+        <td>{{restaurant.cuisine}}</td>
+        <td>{{restaurant.neighborhood}}</td>
+        <td>{{restaurant.date_dined}}</td>
+        <td>{{restaurant.notes}}</td>
+        <td>
+          <button class="btn btn-default update-btn" data-id="{{restaurant.id}}">
+          Update</button>
+        </td>
+        <td>
+          <button class="btn btn-default delete-btn" data-id="{{restaurant.id}}">
+          Delete</button>
+        </td>
+      </tr>
+        {{/each}}
+    </tbody>
+
+</table>
