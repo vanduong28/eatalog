@@ -28,12 +28,18 @@ const signInSuccess = (data) => {
   $('#city-input-fields').show()
   $('.view-cities-button').show()
   $('.new-city-button').show()
-  $('.map-button').show()
+
+  $('#chng-pw-modal').show()
+  $('#sign-out-modal').show()
+  $('#sign-up-modal').hide()
+  $('#sign-in-modal').hide()
 }
 
 const signInFailure = () => {
   // console.error('signIn failure ran. error is: ', error)
   $('#sign-in-modal-label').text('Incorrect email/password. Please try again.')
+  // Clear modal body text in SIGN IN modal
+  $('#sign-in').trigger('reset')
 }
 const signOutSuccess = () => {
   // console.log('signOut success ran. and nothing was returned')
@@ -53,6 +59,11 @@ const signOutSuccess = () => {
   $('#content').empty()
   $('.map-container').hide()
   $('.map-button').hide()
+
+  $('#sign-up-modal').show()
+  $('#sign-in-modal').show()
+  $('#chng-pw-modal').hide()
+  $('#sign-out-modal').hide()
 }
 
 const signOutFailure = () => {
@@ -62,11 +73,15 @@ const signOutFailure = () => {
 const changePasswordSuccess = () => {
   // console.log('change password success. data is: ', data)
   $('#changePasswordLabel').text('Password successfully changed')
+  // Clear modal body text in CHANGE PASSWORD modal
+  $('#change-password').trigger('reset')
 }
 
 const changePasswordFailure = () => {
   // console.error('change password failure ran. error is: ', error)
   $('#changePasswordLabel').text('Invalid password. Try again')
+  // Clear modal body text in CHANGE PASSWORD modal
+  $('#change-password').trigger('reset')
 }
 
 module.exports = {

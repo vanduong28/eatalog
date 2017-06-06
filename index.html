@@ -12,9 +12,9 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Munch munch</h1>
+      <!-- <h1>Munch munch</h1> -->
 
-      <div class="button-functions">
+<!-- <div class="button-functions">
   <button type="button" class="sign-up-btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp-modal">
             Sign Up
             </button>
@@ -22,26 +22,47 @@
             Sign In
           </button>
   <div class="hide-on-start">
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut-modal">
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut-modal">
             Sign Out
             </button>
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changePassword-modal">
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changePassword-modal">
             Change Password
           </button>
   </div>
-</div><br/>
+</div><br/> -->
 
-<div class="btn-container">
+<nav class="my-navbar navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="my-company-name" href="#">Eatalog</div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+          <ul class="dropdown-menu">
+            <li id="sign-up-modal"><a href="#">Sign-up</a></li>
+            <li id="sign-in-modal"><a href="#">Sign-in</a></li>
+            <li id="chng-pw-modal"><a href="#">Change-Password</a></li>
+            <li id="sign-out-modal"><a href="#">Sign-out</a></li>
+            <li class="divider"></li>
+            <li id="view-restaurant-btn"><a href="#">View Restaurant Catalog</a></li>
+          </ul>
+        </ul>
+      </div>
+
+    </nav>
+
+<!-- <div class="btn-container">
     <button type="button" class="new-city-button btn-primary btn-lg" data-toggle="modal" data-target="#addCity-modal">
       Add Restaurant</button>
     <button type="button" class="view-restaurants-button btn-primary btn-lg">View Restaurants</button>
-</div><br/>
+</div> -->
 
+<div class="container-fluid">
 <!-- list of restaurants populated using handlebars-->
 <div class="container block collection">
   <div id="content" class="content"></div>
 </div>
-
+</div>
 
 <!-- Sign Up Modal -->
   <div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

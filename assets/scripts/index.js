@@ -2,9 +2,13 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const authEvents = require('./auth/events.js')
+// const restaurantEvents = require('./restaurant/events.js')
 
 $(() => {
   setAPIOrigin(location, config)
+  authEvents.addHandlers()
+  // restaurantEvents.addRestaurantHandlers()
 })
 
 // use require with a reference to bundle the file and use it in this file
@@ -23,7 +27,29 @@ $(() => {
   $('#sign-in').on('submit', auth.onSignIn)
   $('#sign-out').on('submit', auth.onSignOut)
   $('#change-password').on('submit', auth.changePassword)
-  $('.view-restaurants-button').on('click', restaurant.onGetRestaurants)
+  $('#view-restaurant-btn').on('click', restaurant.onGetRestaurants)
   // listen for click events on the remove button for each restaurant entry
   $(document).on('click', '.delete-btn', restaurant.onDeleteRestaurant)
+
+  $('#sign-up-modal').on('click', function () { $('#tempSignUpError').html('') })
+  $('#sign-up-modal').on('click', function () { $('#signUp-modal').find('input:text, input:password, select, textarea').val('') })
+
+  $('#chng-pw-modal').hide()
+  $('#sign-out-modal').hide()
+  $('#sign-up-modal').show()
+  $('#sign-in-modal').show()
+
+  // clear content in modal fields
+  $('#signUp-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+    $(this).find('h4').text('Sign Up')
+  })
+  $('#signIn-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+    $(this).find('h4').text('Sign In')
+  })
+  $('#changePassword-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+    $(this).find('h4').text('Change Password')
+  })
 })

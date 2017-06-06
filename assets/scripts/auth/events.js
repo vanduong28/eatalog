@@ -9,6 +9,7 @@ const hideButtons = function (event) {
 }
 
 const onSignUp = function (event) {
+  event.preventDefault()
   const data = getFormFields(this)
   event.preventDefault()
   // console.log('sign up button clicked')
@@ -45,10 +46,38 @@ const changePassword = function (event) {
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
+
+const showSignUpModal = function (event) {
+  console.log('this should toggle sign-up modal')
+  $('#signUp-modal').modal('toggle')
+}
+
+const showSignInModal = function (event) {
+  $('#signIn-modal').modal('toggle')
+}
+
+const showChangePasswordModal = function (event) {
+  $('#changePassword-modal').modal('toggle')
+}
+
+const addHandlers = () => {
+  $('#sign-up-modal').on('click', showSignUpModal)
+  $('#sign-in-modal').on('click', showSignInModal)
+  $('#chng-pw-modal').on('click', showChangePasswordModal)
+
+  // Set up user sign-out click event handler
+  $('#sign-out-modal').on('click', onSignOut)
+
+  // Set up user submit event handlers
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  // $('#change-password').on('submit', onChangePassword)
+}
 module.exports = {
   hideButtons,
   onSignUp,
   onSignIn,
   onSignOut,
-  changePassword
+  changePassword,
+  addHandlers
 }
