@@ -28,8 +28,23 @@ const addRestaurant = function (event) {
     .catch(ui.createRestaurantFailure)
 }
 
+const onUpdateRestaurant = function (event) {
+  event.preventDefault()
+  const id = $(this).data('id')
+  console.log('update button clicked. restaurant id is: ', id)
+  const updateInfo = getFormFields(this)
+  api.updateRestaurant(updateInfo, id)
+    .then(ui.updateRestaurantSuccess(id))
+    // .then(onGetRestaurants)
+    .catch(ui.updateRestaurantFailure)
+  // $('#updateRestaurant-modal').show()
+  // $('td[data-id=' + id + ']').attr('contenteditable', 'true')
+  // $('.restaurant-row').not(`.this${id}`).attr('contenteditable', 'false')
+}
+
 module.exports = {
   onGetRestaurants,
   onDeleteRestaurant,
-  addRestaurant
+  addRestaurant,
+  onUpdateRestaurant
 }

@@ -35,6 +35,9 @@ $(() => {
   $('#restaurant-form').on('submit', restaurant.addRestaurant)
   // listen for click events on the remove button for each restaurant entry
   $(document).on('click', '.delete-btn', restaurant.onDeleteRestaurant)
+  // listen for click events on the edit button for each restaurant entry
+  $(document).on('submit', '.restaurant-form-update', restaurant.onUpdateRestaurant)
+  // $(document).on('click', '.update-btn', restaurant.onUpdateRestaurant)
 
   $('#sign-up-modal').on('click', function () { $('#tempSignUpError').html('') })
   $('#sign-up-modal').on('click', function () { $('#signUp-modal').find('input:text, input:password, select, textarea').val('') })
