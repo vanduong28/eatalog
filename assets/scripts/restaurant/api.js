@@ -34,8 +34,20 @@ const createRestaurant = (data) => {
   })
 }
 
+const updateRestaurant = (data, id) => {
+  return $.ajax({
+    url: config.apiOrigin + '/restaurants/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   getRestaurants,
   deleteRestaurant,
-  createRestaurant
+  createRestaurant,
+  updateRestaurant
 }

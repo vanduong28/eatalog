@@ -51,6 +51,17 @@ const createRestaurantSuccess = (data) => {
 const createRestaurantFailure = () => {
   // console.log('create city failure. error is:', error)
 }
+
+const updateRestaurantSuccess = () => {
+  $('.update-restaurant-modal').hide()
+  // $('.city-form-update').text("Successfully updated. Close window and click 'View Cities' to see updates")
+}
+
+const updateRestaurantFailure = () => {
+  // $('.update-modal-label').text("'City' field cannot be blank")
+  // console.log('update city failure. error is:', error)
+}
+
 module.exports = {
   getRestaurantsSuccess,
   getRestaurantsFailure,
@@ -61,5 +72,7 @@ module.exports = {
   hideAddRestaurantBtn,
   showAddRestaurantBtn,
   createRestaurantSuccess,
-  createRestaurantFailure
+  createRestaurantFailure,
+  updateRestaurantSuccess,
+  updateRestaurantFailure
 }

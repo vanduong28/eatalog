@@ -1,4 +1,5 @@
-<table>
+<div class="rest-listing">
+<table class="table table-striped">
 
   <thead>
     <tr>
@@ -8,24 +9,50 @@
       <th>Neighborhood</th>
       <th>Date Dined</th>
       <th>Notes</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
     <tbody>
       {{#each restaurants as |restaurant|}}
-      <tr data-id="{{restaurant.id}}">
-        <td>{{restaurant.name}}</td>
-        <td>{{restaurant.city}}</td>
-        <td>{{restaurant.cuisine}}</td>
-        <td>{{restaurant.neighborhood}}</td>
-        <td>{{restaurant.date_dined}}</td>
-        <td>{{restaurant.notes}}</td>
+      <tr data-id="{{restaurant.id}}" class="restaurant-row">
+        <td contenteditable="false" data-id="{{restaurant.id}}">{{restaurant.name}}</td>
+        <td contenteditable="false" data-id="{{restaurant.id}}">{{restaurant.city}}</td>
+        <td contenteditable="false" data-id="{{restaurant.id}}">{{restaurant.cuisine}}</td>
+        <td contenteditable="false" data-id="{{restaurant.id}}">{{restaurant.neighborhood}}</td>
+        <td contenteditable="false" data-id="{{restaurant.id}}">{{restaurant.date_dined}}</td>
+        <td contenteditable="false" data-id="{{restaurant.id}}">{{restaurant.notes}}</td>
         <td>
-          <button class="btn btn-default update-btn" data-id="{{restaurant.id}}">
+          <button class="btn btn-default update-btn" data-id="{{restaurant.id}}"
+          data-toggle="modal" data-target="#updateRestaurant-modal{{restaurant.id}}">
             <span class="glyphicon glyphicon-pencil"></span>
           </button>
-        </td>
-        <td>
+          <!-- Update Restaurant Modal -->
+          <div class="modal fade" id="updateRestaurant-modal{{restaurant.id}}" class="update-restaurant-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="update-restaurant-modal-label">Update</h4>
+                </div>
+                <div class="modal-body">
+                  <form class="restaurant-form-update" data-id="{{restaurant.id}}">
+                    <div class="form-group">
+                      <input type="text" name="restaurant[name]" id="name-update" value="{{restaurant.name}}" placeholder="Name (required)" required>
+                      <input type="text" name="restaurant[city]" id="city-update" value="{{restaurant.city}}" placeholder="City">
+                      <input type="text" name="restaurant[cuisine]" id="cuisine-update" value="{{restaurant.cuisine}}" placeholder="Cuisine">
+                      <input type="text" name="restaurant[neighborhood]" id="neighborhood-update" value="{{restaurant.neighborhood}}" placeholder="Neighborhood">
+                      <input type="date" name="restaurant[date_dined]" id="date_dined-update" value="{{restaurant.date_dined}}" placeholder="Date Dined">
+                      <input type="text" name="restaurant[notes]" id="notes-update" value="{{restaurant.notes}}" placeholder="Notes">
+                      <input type="submit" name="submit" value="Update Info" data-id="{{restaurant.id}}" class="submit-update-button">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- </td>
+        <td> -->
           <button class="btn btn-default delete-btn" data-id="{{restaurant.id}}">
             <span class="glyphicon glyphicon-trash"></span>
           </button>
@@ -35,3 +62,4 @@
     </tbody>
 
 </table>
+</div>
