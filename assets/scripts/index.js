@@ -24,4 +24,6 @@ $(() => {
   $('#sign-out').on('submit', auth.onSignOut)
   $('#change-password').on('submit', auth.changePassword)
   $('.view-restaurants-button').on('click', restaurant.onGetRestaurants)
+  // listen for click events on the remove button for each restaurant entry
+  $(document).on('click', '.delete-btn', restaurant.onDeleteRestaurant)
 })

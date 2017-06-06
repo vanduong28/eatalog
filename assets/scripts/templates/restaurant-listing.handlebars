@@ -13,8 +13,8 @@
 
     <tbody>
       {{#each restaurants as |restaurant|}}
-      <tr>
-        <td co>{{restaurant.name}}</td>
+      <tr data-id="{{restaurant.id}}">
+        <td>{{restaurant.name}}</td>
         <td>{{restaurant.city}}</td>
         <td>{{restaurant.cuisine}}</td>
         <td>{{restaurant.neighborhood}}</td>
@@ -22,11 +22,13 @@
         <td>{{restaurant.notes}}</td>
         <td>
           <button class="btn btn-default update-btn" data-id="{{restaurant.id}}">
-          Update</button>
+            <span class="glyphicon glyphicon-pencil"></span>
+          </button>
         </td>
         <td>
           <button class="btn btn-default delete-btn" data-id="{{restaurant.id}}">
-          Delete</button>
+            <span class="glyphicon glyphicon-trash"></span>
+          </button>
         </td>
       </tr>
         {{/each}}

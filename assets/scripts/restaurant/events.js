@@ -11,6 +11,15 @@ const onGetRestaurants = function (event) {
     .catch(ui.getRestaurantsFailure)
 }
 
+const onDeleteRestaurant = function (event) {
+  event.preventDefault()
+  const restaurantId = $(this).data('id')
+  api.deleteRestaurant(restaurantId)
+    .then(ui.deleteRestaurantSuccess(restaurantId))
+    .catch(ui.deleteRestaurantFailure)
+}
+
 module.exports = {
-  onGetRestaurants
+  onGetRestaurants,
+  onDeleteRestaurant
 }

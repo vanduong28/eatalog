@@ -14,7 +14,20 @@ const getRestaurantsFailure = (error) => {
   console.log('get restaurants failure. error is:', error)
 }
 
+const deleteRestaurantSuccess = (id) => {
+  event.preventDefault()
+  console.log('remove restaurant clicked. in restaurant/ui.js. data id:', id)
+  $("tr[data-id='" + id + "']").remove()
+  // $('.user-city-message').empty()
+}
+
+const deleteRestaurantFailure = () => {
+  // console.log('delete city failure.')
+}
+
 module.exports = {
   getRestaurantsSuccess,
-  getRestaurantsFailure
+  getRestaurantsFailure,
+  deleteRestaurantSuccess,
+  deleteRestaurantFailure
 }
