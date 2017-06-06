@@ -23,7 +23,19 @@ const deleteRestaurant = function (id) {
   })
 }
 
+const createRestaurant = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/restaurants',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   getRestaurants,
-  deleteRestaurant
+  deleteRestaurant,
+  createRestaurant
 }

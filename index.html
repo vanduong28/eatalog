@@ -45,6 +45,7 @@
             <li id="sign-out-modal"><a href="#">Sign-out</a></li>
             <li class="divider"></li>
             <li id="view-restaurant-btn"><a href="#">View Restaurant Catalog</a></li>
+            <li id="add-restaurant-btn" data-toggle="modal" data-target="#addRestaurant-modal"><a href="#">Add Restaurant</a></li>
           </ul>
         </ul>
       </div>
@@ -140,6 +141,31 @@
               <input type="password" name="passwords[old]" id="old-password" placeholder="Old Password">
               <input type="password" name="passwords[new]" id="new-password" placeholder="New Password">
               <input type="submit" name="submit" value="Change Password">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Restaurant Modal -->
+  <div class="modal fade" id="addRestaurant-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="add-city-modal-label">Add Restaurant</h4>
+        </div>
+        <div class="modal-body">
+          <form id="restaurant-form">
+            <div class="form-group">
+              <input type="text" name="restaurant[name]" id="name-input" placeholder="Name (required)" required>
+              <input type="text" name="restaurant[city]" id="city-input" placeholder="City">
+              <input type="text" name="restaurant[cuisine]" id="cuisine-input" placeholder="Cuisine">
+              <input type="text" name="restaurant[neighborhood]" id="neighborhood-input" placeholder="Neighborhood">
+              <input type="date" name="restaurant[date_dined]" id="date_dined-input" placeholder="Date Dined">
+              <input type="text" name="restaurant[notes]" id="notes-input" placeholder="Notes">
+              <input type="submit" name="submit" value="Add restaurant">
             </div>
           </form>
         </div>

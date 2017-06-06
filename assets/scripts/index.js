@@ -12,6 +12,7 @@ $(() => {
   // restaurantEvents.addRestaurantHandlers()
   // Hide View restaurant modal button until user signs in
   restaurantUi.hideViewRestaurantsBtn()
+  restaurantUi.hideAddRestaurantBtn()
 })
 
 // use require with a reference to bundle the file and use it in this file
@@ -31,6 +32,7 @@ $(() => {
   $('#sign-out').on('submit', auth.onSignOut)
   $('#change-password').on('submit', auth.changePassword)
   $('#view-restaurant-btn').on('click', restaurant.onGetRestaurants)
+  $('#restaurant-form').on('submit', restaurant.addRestaurant)
   // listen for click events on the remove button for each restaurant entry
   $(document).on('click', '.delete-btn', restaurant.onDeleteRestaurant)
 
@@ -54,5 +56,8 @@ $(() => {
   $('#changePassword-modal').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
     $(this).find('h4').text('Change Password')
+  })
+  $('#addRestaurant-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
   })
 })

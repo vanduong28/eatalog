@@ -34,11 +34,32 @@ const showViewRestaurantsBtn = function () {
   $('#view-restaurant-btn').show()
 }
 
+const hideAddRestaurantBtn = function () {
+  // Hide View restaurants modal button initially until user signs in.
+  $('#add-restaurant-btn').hide()
+}
+
+const showAddRestaurantBtn = function () {
+  $('#add-restaurant-btn').show()
+}
+
+const createRestaurantSuccess = (data) => {
+  $('#addRestaurant-modal').modal('hide')
+  // $('.user-city-message').text("Restaurant added. Click 'View Cities' for updated list")
+}
+
+const createRestaurantFailure = () => {
+  // console.log('create city failure. error is:', error)
+}
 module.exports = {
   getRestaurantsSuccess,
   getRestaurantsFailure,
   deleteRestaurantSuccess,
   deleteRestaurantFailure,
   hideViewRestaurantsBtn,
-  showViewRestaurantsBtn
+  showViewRestaurantsBtn,
+  hideAddRestaurantBtn,
+  showAddRestaurantBtn,
+  createRestaurantSuccess,
+  createRestaurantFailure
 }
