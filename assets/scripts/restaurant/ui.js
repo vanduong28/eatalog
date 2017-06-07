@@ -53,12 +53,11 @@ const createRestaurantFailure = () => {
 }
 
 const updateRestaurantSuccess = () => {
-  $('.update-restaurant-modal').hide()
-  // $('.city-form-update').text("Successfully updated. Close window and click 'View Cities' to see updates")
+  $('.restaurant-form-update').text('Successfully updated. Close window to see updates')
 }
 
 const updateRestaurantFailure = () => {
-  // $('.update-modal-label').text("'City' field cannot be blank")
+  // $('.update-modal-label').text("'Name' field cannot be blank")
   // console.log('update city failure. error is:', error)
 }
 

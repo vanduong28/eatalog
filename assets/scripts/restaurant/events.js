@@ -13,6 +13,8 @@ const onGetRestaurants = function (event) {
 
 const onDeleteRestaurant = function (event) {
   event.preventDefault()
+  // const id = $(this).data('id')
+  // same as above
   const restaurantId = $(this).data('id')
   api.deleteRestaurant(restaurantId)
     .then(ui.deleteRestaurantSuccess(restaurantId))
@@ -30,11 +32,13 @@ const addRestaurant = function (event) {
 
 const onUpdateRestaurant = function (event) {
   event.preventDefault()
-  const id = $(this).data('id')
+  // const id = $(this).data('id')
+  // same as above
+  const id = $(this).attr('data-id')
   console.log('update button clicked. restaurant id is: ', id)
   const updateInfo = getFormFields(this)
   api.updateRestaurant(updateInfo, id)
-    .then(ui.updateRestaurantSuccess(id))
+    .then(ui.updateRestaurantSuccess)
     // .then(onGetRestaurants)
     .catch(ui.updateRestaurantFailure)
   // $('#updateRestaurant-modal').show()
