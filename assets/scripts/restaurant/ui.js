@@ -1,23 +1,23 @@
 'use strict'
 
 const showRestaurantsTemplate = require('../templates/restaurant-listing.handlebars')
-const helpers = require('./helpers')
+// const helpers = require('./helpers')
 
 const getRestaurantsSuccess = (data) => {
-  console.log('getRestaurantsSuccess data is: ', data)
+  // console.log('getRestaurantsSuccess data is: ', data)
   const showRestaurantsHtml = showRestaurantsTemplate({ restaurants: data.restaurants })
   $('.content').html(showRestaurantsHtml)
   // $('#removeBtn').on('click', deleteCitySuccess)
   // $('.user-city-message').empty()
 }
 
-const getRestaurantsFailure = (error) => {
-  console.log('get restaurants failure. error is:', error)
+const getRestaurantsFailure = () => {
+  // console.log('get restaurants failure. error is:', error)
 }
 
 const deleteRestaurantSuccess = (id) => {
   event.preventDefault()
-  console.log('remove restaurant clicked. in restaurant/ui.js. data id:', id)
+  // console.log('remove restaurant clicked. in restaurant/ui.js. data id:', id)
   $("tr[data-id='" + id + "']").remove()
   // $('.user-city-message').empty()
 }
@@ -54,7 +54,7 @@ const createRestaurantFailure = () => {
 }
 
 const updateRestaurantSuccess = () => {
-  console.log('update restaurant success')
+  // console.log('update restaurant success')
   // helpers.showAlert($('#alert-id'))
   // clear modal behavior. need to revisit this code
   $('.update-restaurant-modal').modal('hide')

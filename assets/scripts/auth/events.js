@@ -10,8 +10,8 @@ const hideButtons = function (event) {
 
 const onSignUp = function (event) {
   event.preventDefault()
+  // console.log('on sign up')
   const data = getFormFields(this)
-  // console.log('sign up button clicked')
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -47,7 +47,6 @@ const changePassword = function (event) {
 }
 
 const showSignUpModal = function (event) {
-  console.log('this should toggle sign-up modal')
   $('#signUp-modal').modal('toggle')
 }
 
@@ -68,8 +67,8 @@ const addHandlers = () => {
   $('#sign-out-modal').on('click', onSignOut)
 
   // Set up user submit event handlers
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
+  // $('#sign-up').on('submit', onSignUp)
+  // $('#sign-in').on('submit', onSignIn)
   // $('#change-password').on('submit', onChangePassword)
 }
 module.exports = {

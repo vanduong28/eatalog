@@ -5,20 +5,18 @@ const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onGetRestaurants = function (event) {
-  // event.preventDefault()
-  console.log('onGetRestaurants')
+  // console.log('onGetRestaurants')
   api.getRestaurants()
     .then(ui.getRestaurantsSuccess)
     .catch(ui.getRestaurantsFailure)
 }
 
-const onGetOneRestaurant = function (event) {
-  // event.preventDefault()
-  // const id =
-  api.getRestaurant()
-    .then(ui.getOneRestaurantSuccess)
-    .catch(ui.getOneRestaurantFailure)
-}
+// const onGetOneRestaurant = function (event) {
+//   // const id =
+//   api.getRestaurant()
+//     .then(ui.getOneRestaurantSuccess)
+//     .catch(ui.getOneRestaurantFailure)
+// }
 
 const onDeleteRestaurant = function (event) {
   event.preventDefault()
@@ -44,9 +42,9 @@ const onUpdateRestaurant = function (event) {
   // const id = $(this).data('id')
   // same as above
   const id = $(this).attr('data-id')
-  console.log('update button clicked. restaurant id is: ', id)
+  // console.log('update button clicked. restaurant id is: ', id)
   const updateInfo = getFormFields(this)
-  console.log('update info is: ', updateInfo)
+  // console.log('update info is: ', updateInfo)
   api.updateRestaurant(updateInfo, id)
     .then(ui.updateRestaurantSuccess)
     .then(onGetRestaurants)
@@ -56,19 +54,8 @@ const onUpdateRestaurant = function (event) {
   // $('.restaurant-row').not(`.this${id}`).attr('contenteditable', 'false')
 }
 
-// const displayUpdateModal = function () {
-//   const id = $(this).attr('data-id')
-//   console.log('pencil icon clicked. id is: ', id)
-//   api.getRestaurant(id)
-//   $('.update-restaurant-modal').modal('show')
-// }
-
-// const closeUpdateModal = function (event) {
-//   $('.update-restaurant-modal').modal('hide')
-// }
-
 const onUpdateClose = function (event) {
-  console.log('close update modal')
+  // console.log('close update modal')
   onGetRestaurants()
   $('.update-restaurant-modal').modal('hide')
   $('body').removeClass('modal-open')
@@ -77,11 +64,10 @@ const onUpdateClose = function (event) {
 
 module.exports = {
   onGetRestaurants,
-  onGetOneRestaurant,
+  // onGetOneRestaurant,
   onDeleteRestaurant,
   addRestaurant,
   onUpdateRestaurant,
   // closeUpdateModal,
   onUpdateClose
-  // displayUpdateModal
 }
