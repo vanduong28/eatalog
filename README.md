@@ -60,7 +60,7 @@ Below is a screenshot of the Eatalog application. Note the Dine Date field can
 accept any dates including future dates as I use it not only to mark when I
 dined at a restaurant but also when I plan to.
 
-![alt text](http://i.imgur.com/cykDj5b.png)
+![alt text](http://i.imgur.com/vZxwDF1.png)
 
 ## Links
 

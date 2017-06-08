@@ -52,6 +52,8 @@ $(() => {
   $('#sign-up-modal').show()
   $('#sign-in-modal').show()
 
+  $('#intro').hide()
+
   // clear content in modal fields
   $('#signUp-modal').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()

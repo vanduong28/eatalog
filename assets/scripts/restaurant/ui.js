@@ -7,8 +7,7 @@ const getRestaurantsSuccess = (data) => {
   // console.log('getRestaurantsSuccess data is: ', data)
   const showRestaurantsHtml = showRestaurantsTemplate({ restaurants: data.restaurants })
   $('.content').html(showRestaurantsHtml)
-  // $('#removeBtn').on('click', deleteCitySuccess)
-  // $('.user-city-message').empty()
+  $('#intro').hide()
 }
 
 const getRestaurantsFailure = () => {

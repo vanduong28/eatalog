@@ -16,7 +16,7 @@
       <nav class="my-navbar navbar navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
-            <div class="my-company-name" href="#">Eatalog</div>
+            <!-- <div class="my-company-name" href="#">Eatalog</div> -->
           </div>
           <ul class="nav navbar-nav navbar-right">
             <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
@@ -34,22 +34,31 @@
         <!-- <div id="alert-id" class="alert alert-success alert-styling">Info successfully updated</div> -->
       </nav>
 
-      <!-- message to display before sign up/sign in -->
-      <div class="container-fluid" id="intro">
-        <p>Sign in to create your own catalog of restaurants!</p>
+      <!-- Page Header -->
+      <!-- Set your background image for this header on the line below. -->
+      <header class="intro-header" style="background-image: url('http://i.imgur.com/SyywRCa.jpg')">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                      <div class="site-heading">
+                          <h1>Eatalog</h1>
+                          <hr class="small">
+                          <span class="subheading">Sign in to create your own restaurant catalog</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+
+      <!-- message to display after sign in -->
+      <div id="intro">
+        <p>Inspired by a desire to feast. Use the navigation to view your
+        existing catalog and add restaurants</p>
       </div>
 
-      <!-- <div class="button-functions">
-        <button type="button" class="sign-up-btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp-modal">
-                  Sign Up
-                  </button>
-      </div> -->
-
-<div class="container-fluid">
 <!-- list of restaurants populated using handlebars-->
 <div class="container block collection">
   <div id="content" class="content"></div>
-</div>
 </div>
 
 <!-- Sign Up Modal -->
