@@ -11,7 +11,6 @@ const hideButtons = function (event) {
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  event.preventDefault()
   // console.log('sign up button clicked')
   api.signUp(data)
     .then(ui.signUpSuccess)
