@@ -37,7 +37,7 @@ const signInSuccess = (data) => {
   $('#sign-in-modal').hide()
   $('#view-restaurant-btn').show()
   $('#add-restaurant-btn').show()
-  $('#intro').hide()
+  $('#intro').show()
 }
 
 const signInFailure = () => {
@@ -72,7 +72,7 @@ const signOutSuccess = () => {
 
   $('#view-restaurant-btn').hide()
   $('#add-restaurant-btn').hide()
-  $('#intro').show()
+  $('#intro').hide()
 }
 
 const signOutFailure = () => {

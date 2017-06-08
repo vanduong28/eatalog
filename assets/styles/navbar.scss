@@ -1,6 +1,7 @@
 // sets background color and padding for navbar
 nav.my-navbar.navbar {
   background: #A1B8D8;
+  background-color: rgba(255,255,255,0.5);
   border-radius: 0;
   margin: 0;
   padding-left: 8px;
@@ -14,3 +15,8 @@ nav.my-navbar.navbar {
   font-size: 20px;
   line-height: 55px;
 }
+
+// body.modal-open {
+//     overflow: hidden;
+//
+// }
