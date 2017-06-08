@@ -62,6 +62,12 @@ dined at a restaurant but also when I plan to.
 
 ![alt text](http://i.imgur.com/cykDj5b.png)
 
+## Links
+
+-   [Deployed client app](https://vanduong28.github.io/eatalog/)
+-   [Deployed API](https://morning-mountain-68152.herokuapp.com/)
+-   [API repository](https://github.com/vanduong28/eatalog-api)
+
 ## Open Issues
 Update modal - when a user makes changes to fields in the Update modal and
 closes the modal by clicking on the 'x' instead of submitting the updates, when
