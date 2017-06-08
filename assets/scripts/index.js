@@ -69,5 +69,5 @@ $(() => {
     $(this).find('form')[0].reset()
   })
 
-  $('#alert-id').hide()
+  // $('#alert-id').hide()
 })

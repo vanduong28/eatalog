@@ -55,7 +55,11 @@ const createRestaurantFailure = () => {
 
 const updateRestaurantSuccess = () => {
   console.log('update restaurant success')
-  helpers.showAlert($('#alert-id'))
+  // helpers.showAlert($('#alert-id'))
+  // clear modal behavior. need to revisit this code
+  $('.update-restaurant-modal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   // $('.restaurant-form-update').text('Successfully updated. Close window to see updates')
 }
 

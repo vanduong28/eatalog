@@ -7,7 +7,8 @@ const hideAlerts = () => {
 const showAlert = function (message) {
   hideAlerts()
 
-  message.slideDown().delay(500).slideUp()
+  // message.slideDown().delay(500).slideUp()
+  message.fadeTo(1000, 5000).slideUp(500)
 }
 
 module.exports = {

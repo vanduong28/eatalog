@@ -51,10 +51,6 @@ const onUpdateRestaurant = function (event) {
     .then(ui.updateRestaurantSuccess)
     .then(onGetRestaurants)
     .catch(ui.updateRestaurantFailure)
-  // clear modal behavior. need to revisit this code
-  $('.update-restaurant-modal').modal('hide')
-  $('body').removeClass('modal-open')
-  $('.modal-backdrop').remove()
 
   // $('td[data-id=' + id + ']').attr('contenteditable', 'true')
   // $('.restaurant-row').not(`.this${id}`).attr('contenteditable', 'false')
