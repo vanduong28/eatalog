@@ -35,9 +35,14 @@ $(() => {
   $('#restaurant-form').on('submit', restaurant.addRestaurant)
   // listen for click events on the remove button for each restaurant entry
   $(document).on('click', '.delete-btn', restaurant.onDeleteRestaurant)
-  // listen for click events on the edit button for each restaurant entry
+  // listen for click event on edit button to open update modal
+  // $(document).on('click', '.update-btn', restaurant.displayUpdateModal)
+  // listen for submit events on the edit button for each restaurant entry
   $(document).on('submit', '.restaurant-form-update', restaurant.onUpdateRestaurant)
-  // $(document).on('click', '.update-btn', restaurant.onUpdateRestaurant)
+  // $('#content').on('submit', '.restaurant-form-update', restaurant.onUpdateRestaurant)
+  // listen for update modal close
+  // $('.update-restaurant-modal').on('click', restaurant.onGetRestaurants)
+  // $(document).on('click', '.updateclose', restaurant.onUpdateClose)
 
   $('#sign-up-modal').on('click', function () { $('#tempSignUpError').html('') })
   $('#sign-up-modal').on('click', function () { $('#signUp-modal').find('input:text, input:password, select, textarea').val('') })
@@ -63,4 +68,6 @@ $(() => {
   $('#addRestaurant-modal').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
   })
+
+  $('#alert-id').hide()
 })

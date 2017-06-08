@@ -1,9 +1,10 @@
 'use strict'
 
 const showRestaurantsTemplate = require('../templates/restaurant-listing.handlebars')
+const helpers = require('./helpers')
 
 const getRestaurantsSuccess = (data) => {
-  console.log(data)
+  console.log('getRestaurantsSuccess data is: ', data)
   const showRestaurantsHtml = showRestaurantsTemplate({ restaurants: data.restaurants })
   $('.content').html(showRestaurantsHtml)
   // $('#removeBtn').on('click', deleteCitySuccess)
@@ -53,7 +54,9 @@ const createRestaurantFailure = () => {
 }
 
 const updateRestaurantSuccess = () => {
-  $('.restaurant-form-update').text('Successfully updated. Close window to see updates')
+  console.log('update restaurant success')
+  helpers.showAlert($('#alert-id'))
+  // $('.restaurant-form-update').text('Successfully updated. Close window to see updates')
 }
 
 const updateRestaurantFailure = () => {

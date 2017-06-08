@@ -13,25 +13,32 @@
     </head>
     <body class="container-fluid">
 
-<nav class="my-navbar navbar navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <div class="my-company-name" href="#">Eatalog</div>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-          <ul class="dropdown-menu">
-            <li id="sign-up-modal"><a href="#">Sign-up</a></li>
-            <li id="sign-in-modal"><a href="#">Sign-in</a></li>
-            <li id="chng-pw-modal"><a href="#">Change Password</a></li>
-            <li id="sign-out-modal"><a href="#">Sign-out</a></li>
-            <li class="divider"></li>
-            <li id="view-restaurant-btn"><a href="#">View Restaurant Catalog</a></li>
-            <li id="add-restaurant-btn" data-toggle="modal" data-target="#addRestaurant-modal"><a href="#">Add Restaurant</a></li>
+      <nav class="my-navbar navbar navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div class="my-company-name" href="#">Eatalog</div>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+            <ul class="dropdown-menu">
+              <li id="sign-up-modal"><a href="#">Sign-up</a></li>
+              <li id="sign-in-modal"><a href="#">Sign-in</a></li>
+              <li id="chng-pw-modal"><a href="#">Change Password</a></li>
+              <li id="sign-out-modal"><a href="#">Sign-out</a></li>
+              <li class="divider"></li>
+              <li id="view-restaurant-btn"><a href="#">View Restaurant Catalog</a></li>
+              <li id="add-restaurant-btn" data-toggle="modal" data-target="#addRestaurant-modal"><a href="#">Add Restaurant</a></li>
+            </ul>
           </ul>
-        </ul>
+        </div>
+        <div id="alert-id" class="alert alert-success alert-styling">Info successfully updated</div>
+      </nav>
+
+      <!-- message to display before sign up/sign in -->
+      <div class="container-fluid" id="intro">
+        <p>Sign in to create your own catalog of restaurants!</p>
       </div>
-    </nav>
+
 
 <div class="container-fluid">
 <!-- list of restaurants populated using handlebars-->
@@ -147,31 +154,5 @@
       </div>
     </div>
   </div>
-
-  <!-- Update Restaurant Modal -->
-  <!-- <div class="modal fade" id="updateRestaurant-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="update-restaurant-modal-label">Update</h4>
-        </div>
-        <div class="modal-body">
-          <form id="update-restaurant-form">
-            <div class="form-group">
-              <input type="text" name="restaurant[name]" id="name-update" value={{restaurant.name}} placeholder="Name (required)" required>
-              <input type="text" name="restaurant[city]" id="city-update" placeholder="City">
-              <input type="text" name="restaurant[cuisine]" id="cuisine-update" placeholder="Cuisine">
-              <input type="text" name="restaurant[neighborhood]" id="neighborhood-update" placeholder="Neighborhood">
-              <input type="date" name="restaurant[date_dined]" id="date_dined-update" placeholder="Date Dined">
-              <input type="text" name="restaurant[notes]" id="notes-update" placeholder="Notes">
-              <input type="submit" name="submit" value="Update restaurant">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
     </body>
 </html>

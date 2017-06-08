@@ -36,6 +36,7 @@ const signInSuccess = (data) => {
   $('#sign-in-modal').hide()
   $('#view-restaurant-btn').show()
   $('#add-restaurant-btn').show()
+  $('#intro').hide()
 }
 
 const signInFailure = () => {
@@ -70,6 +71,7 @@ const signOutSuccess = () => {
 
   $('#view-restaurant-btn').hide()
   $('#add-restaurant-btn').hide()
+  $('#intro').show()
 }
 
 const signOutFailure = () => {

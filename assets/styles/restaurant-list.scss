@@ -2,6 +2,6 @@
   padding-top: 70px;
 }
 
-// .table-striped thead {
-//   display: block;
-// }
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #FFFFCC;
+}
