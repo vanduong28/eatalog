@@ -3,11 +3,12 @@ const store = require('../store')
 
 const signUpSuccess = () => {
   // console.log('sign up success')
-  $('#signUp-modal').modal('hide')
+  $('#signUp-modal').modal('toggle')
   $('.game-prompt').hide()
   $('.sign-up-btn').hide()
   $('.sign-in-prompt').text('Sign in to start planning!')
   $('.game-message').text(' ')
+  $('#sign-up').trigger('reset')
   $('#signIn-modal').modal('toggle')
 }
 
