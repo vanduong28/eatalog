@@ -12,51 +12,32 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <!-- <h1>Munch munch</h1> -->
 
-<!-- <div class="button-functions">
-  <button type="button" class="sign-up-btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp-modal">
-            Sign Up
-            </button>
-  <button type="button" class="sign-in-btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn-modal">
-            Sign In
-          </button>
-  <div class="hide-on-start">
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut-modal">
-            Sign Out
-            </button>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changePassword-modal">
-            Change Password
-          </button>
-  </div>
-</div><br/> -->
-
-<nav class="my-navbar navbar navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <div class="my-company-name" href="#">Eatalog</div>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-          <ul class="dropdown-menu">
-            <li id="sign-up-modal"><a href="#">Sign-up</a></li>
-            <li id="sign-in-modal"><a href="#">Sign-in</a></li>
-            <li id="chng-pw-modal"><a href="#">Change-Password</a></li>
-            <li id="sign-out-modal"><a href="#">Sign-out</a></li>
-            <li class="divider"></li>
-            <li id="view-restaurant-btn"><a href="#">View Restaurant Catalog</a></li>
-            <li id="add-restaurant-btn" data-toggle="modal" data-target="#addRestaurant-modal"><a href="#">Add Restaurant</a></li>
+      <nav class="my-navbar navbar navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div class="my-company-name" href="#">Eatalog</div>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+            <ul class="dropdown-menu">
+              <li id="sign-up-modal"><a href="#">Sign-up</a></li>
+              <li id="sign-in-modal"><a href="#">Sign-in</a></li>
+              <li id="chng-pw-modal"><a href="#">Change Password</a></li>
+              <li id="sign-out-modal"><a href="#">Sign-out</a></li>
+              <li class="divider"></li>
+              <li id="view-restaurant-btn"><a href="#">View Restaurant Catalog</a></li>
+              <li id="add-restaurant-btn" data-toggle="modal" data-target="#addRestaurant-modal"><a href="#">Add Restaurant</a></li>
+            </ul>
           </ul>
-        </ul>
+        </div>
+        <div id="alert-id" class="alert alert-success alert-styling">Info successfully updated</div>
+      </nav>
+
+      <!-- message to display before sign up/sign in -->
+      <div class="container-fluid" id="intro">
+        <p>Sign in to create your own catalog of restaurants!</p>
       </div>
-
-    </nav>
-
-<!-- <div class="btn-container">
-    <button type="button" class="new-city-button btn-primary btn-lg" data-toggle="modal" data-target="#addCity-modal">
-      Add Restaurant</button>
-    <button type="button" class="view-restaurants-button btn-primary btn-lg">View Restaurants</button>
-</div> -->
 
 
 <div class="container-fluid">
@@ -173,31 +154,5 @@
       </div>
     </div>
   </div>
-
-  <!-- Update Restaurant Modal -->
-  <div class="modal fade" id="updateRestaurant-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="update-restaurant-modal-label">Update</h4>
-        </div>
-        <div class="modal-body">
-          <form id="update-restaurant-form">
-            <div class="form-group">
-              <input type="text" name="restaurant[name]" id="name-update" value={{restaurant.name}} placeholder="Name (required)" required>
-              <input type="text" name="restaurant[city]" id="city-update" placeholder="City">
-              <input type="text" name="restaurant[cuisine]" id="cuisine-update" placeholder="Cuisine">
-              <input type="text" name="restaurant[neighborhood]" id="neighborhood-update" placeholder="Neighborhood">
-              <input type="date" name="restaurant[date_dined]" id="date_dined-update" placeholder="Date Dined">
-              <input type="text" name="restaurant[notes]" id="notes-update" placeholder="Notes">
-              <input type="submit" name="submit" value="Update restaurant">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
     </body>
 </html>
