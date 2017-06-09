@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Eatalog</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+      <nav class="my-navbar navbar navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!-- <div class="my-company-name" href="#">Eatalog</div> -->
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li data-toggle="dropdown" class="dropdown-toggle"><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+            <ul class="dropdown-menu">
+              <li id="sign-up-modal"><a href="#">Sign-up</a></li>
+              <li id="sign-in-modal"><a href="#">Sign-in</a></li>
+              <li id="chng-pw-modal"><a href="#">Change Password</a></li>
+              <li id="sign-out-modal"><a href="#">Sign-out</a></li>
+              <li class="divider"></li>
+              <li id="view-restaurant-btn"><a href="#">View Restaurant Catalog</a></li>
+              <li id="add-restaurant-btn" data-toggle="modal" data-target="#addRestaurant-modal"><a href="#">Add Restaurant</a></li>
+            </ul>
+          </ul>
+        </div>
+        <!-- <div id="alert-id" class="alert alert-success alert-styling">Info successfully updated</div> -->
+      </nav>
+
+      <!-- Page Header -->
+      <!-- Set your background image for this header on the line below. -->
+      <header class="intro-header" style="background-image: url('http://i.imgur.com/SyywRCa.jpg')">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                      <div class="site-heading">
+                          <h1>Eatalog</h1>
+                          <hr class="small">
+                          <span class="subheading">Sign in to create your own restaurant catalog</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+
+      <!-- message to display after sign in -->
+      <div id="intro">
+        <p>Inspired by a desire to feast. Use the navigation in the upper right hand corner to view your
+        existing catalog and add restaurants</p>
+      </div>
+
+<!-- list of restaurants populated using handlebars-->
+<div class="container block collection">
+  <div id="content" class="content"></div>
+</div>
+
+<!-- Sign Up Modal -->
+  <div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="sign-up-modal-label">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-up">
+            <div class="form-group">
+              <input type="text" name="credentials[email]" id="sign-up-email" placeholder="Email">
+              <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
+              <input type="submit" name="submit" value="Sign up!">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signin Modal -->
+  <div class="modal fade" id="signIn-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="sign-in-modal-label">Sign In</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <div class="form-group">
+              <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Email">
+              <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+              <input type="submit" name="submit" value="Sign in">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signout Modal -->
+  <div class="modal fade" id="signOut-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Are you sure you want to sign out?</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-out">
+            <div class="form-group">
+              <input type="submit" name="submit" value="Sign out">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+  <div class="modal fade" id="changePassword-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="changePasswordLabel">Change Password</h4>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <div class="form-group">
+              <input type="password" name="passwords[old]" id="old-password" placeholder="Old Password">
+              <input type="password" name="passwords[new]" id="new-password" placeholder="New Password">
+              <input type="submit" name="submit" value="Change Password">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Restaurant Modal -->
+  <div class="modal fade" id="addRestaurant-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="add-restaurant-modal-label">Add Restaurant</h4>
+        </div>
+        <div class="modal-body">
+          <form id="restaurant-form">
+            <div class="form-group">
+              <input type="text" name="restaurant[name]" id="name-input" placeholder="Name (required)" required>
+              <input type="text" name="restaurant[city]" id="city-input" placeholder="City">
+              <input type="text" name="restaurant[cuisine]" id="cuisine-input" placeholder="Cuisine">
+              <input type="text" name="restaurant[neighborhood]" id="neighborhood-input" placeholder="Neighborhood">
+              <input type="date" name="restaurant[date_dined]" id="date_dined-input" placeholder="Date Dined">
+              <input type="text" name="restaurant[notes]" id="notes-input" placeholder="Notes">
+              <input type="submit" name="submit" value="Add restaurant">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    </body>
+</html>
